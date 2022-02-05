@@ -1,0 +1,15 @@
+/* Custom Stylesheet */
+ .icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
+  
+  .btn {
+    border-radius: 4px;
+  }
+  
+  a {
+    border-radius: 4px;
+  }
