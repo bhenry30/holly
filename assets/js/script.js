@@ -8,15 +8,22 @@
         var mm = String(today.getMonth() + 1).padStart(2, '');
         var yyyy = today.getFullYear();
 
+        /*if( datepicker ) {
+        var dd = String(today.getDate()).padStart(2, '');
+        var mm = String(today.getMonth() + 1).padStart(2, '');
+        var yyyy = today.getFullYear(); } */
+
         //for (var i = 0; i < CountryCodes.length; i++) {
         CountryCodes.forEach(function(element) { 
             async function fetchData() {
             const countryCode = `${element.toLowerCase()}`;
-            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${element}&day=1&month=${mm}&year=${yyyy}/json`)
+            
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${countryCode}&day=${dd}&month=${mm}&year=${yyyy}/json`)
             const holidays = await response.json();
             const JSONstr = JSON.stringify(holidays);
 
             if( JSONstr != `{"meta":{"code":200},"response":{"holidays":[]}}` ) { 
+
             var JSONlength = JSONstr.length;
             const JSONprocess = JSONstr.substring(21, JSONlength - 1);
             const JSONstrBrack = `{ ${JSONprocess} }`;
@@ -55,13 +62,13 @@
             var CountryName = obj.country_name;
             var CountryPopulation = String(obj.population).replace(/(.)(?=(\d{3})+$)/g,'$1,');
             var CountryRanking = obj.ranking;
-            const WorldShare = Math.round( obj.world_share * 100 )/100;
+            const WorldShare = Math.round( obj.world_share * 1000 )/1000;
 
             //turns API numeric month into month name
             var holidayMonth = "";
 
                 if (element.date.datetime.month == 1) { var holidayMonth = "January"; }
-                if (element.date.datetime.month = 2) { var holidayMonth = "Feburary"; }
+                if (element.date.datetime.month == 2) { var holidayMonth = "Feburary"; }
                 if (element.date.datetime.month == 3) { var holidayMonth = "March"; }
                 if (element.date.datetime.month == 4) { var holidayMonth = "April"; }
                 if (element.date.datetime.month == 5) { var holidayMonth = "May"; }
@@ -82,7 +89,13 @@
             ${element.type} on ${holidayMonth} ${holidayDay}</h5>
             <p>${element.description}</p><br>
             <p>${element.country.name} has a population of ${CountryPopulation}<br>World Ranking by population is ${obj.ranking}<br>${WorldShare}% of the World celebrates this holiday</p>
-            </div>
+            <div id="holiday">
+            <img style="clear: right" class="flag"
+              src="https://flagcdn.com/w640/us.png"
+              srcset="https://flagcdn.com/w1280/${countryCode}.png"
+              width="240"
+              alt="${element.country.name}"></div>
+              </div>
             <div class="card-action">
               <a id="learnMore" class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="#">Learn More</a>
               <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
