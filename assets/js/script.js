@@ -12,7 +12,7 @@
         CountryCodes.forEach(function(element) { 
             async function fetchData() {
                 const countryCode = `${element.toLowerCase()}`;
-            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${element}&day=5&month=${mm}&year=${yyyy}/json`)
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${element}&day=${dd}&month=${mm}&year=${yyyy}/json`)
             const holidays = await response.json();
             const JSONstr = JSON.stringify(holidays);
 
