@@ -24,7 +24,7 @@
     
             console.log(parseStr);
             var obj = parseStr;
-            var wrapper = document.getElementById("wrapper");
+            var card = document.getElementById("cardfetch");
             obj.response.holidays.forEach(function(element) {
     
                 //turns API numeric day into day with suffix
@@ -74,20 +74,24 @@
                 if (element.date.datetime.month == 12) { var holidayMonth = "December"; }
     
             //Starts the record handoff to HTML
-            wrapper.insertAdjacentHTML('beforeend', `
-
-            <div class="grid-container">
-            <div id="holiday" class="grid-child-left">
-            <h3>${element.name}</h3>
-            <h4>Celebrated In: ${element.country.name}<br>
-            ${element.type} on ${holidayMonth} ${holidayDay}</h4>
-            <p>${element.description}</p>
-            <p>${element.country.name} has a population of ${CountryPopulation}<br>World Ranking by population is ${obj.ranking}<br>${WorldShare}% of the World celebrates this holiday</p></div>
-            <div id="addition" class="grid-child-right fade-in-image" style="text-align: right;"><img
-            src="https://flagcdn.com/w640/${countryCode}.png"
-            srcset="https://flagcdn.com/w1280/${countryCode}.png 2x"
-            width="200"
-            alt="${element.country.name}"></div></div>`); }
+            card.insertAdjacentHTML('beforeend', `
+            <div class="card sticky-action">
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"><h4>${element.name}</h4><i class="material-icons right">more_vert</i></span>
+              <h5>Celebrated In: ${element.country.name}<br>
+            ${element.type} on ${holidayMonth} ${holidayDay}</h5>
+            <p>${element.description}</p><br>
+            <p>${element.country.name} has a population of ${CountryPopulation}<br>World Ranking by population is ${obj.ranking}<br>${WorldShare}% of the World celebrates this holiday</p>
+            </div>
+            <div class="card-action">
+              <a id="learnMore" class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="#">Learn More</a>
+              <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>`); }
 
             fetchPopData(); })}}
             fetchData(); })
