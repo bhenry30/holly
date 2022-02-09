@@ -22,7 +22,7 @@ This site was developed using the following technologies:
 The site can be accessed at the following hyperlink:  
 https://hmarkestrad.github.io/bhenry30/holly/  
 ## Screenshot:  
-![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/tree/main/assets/imges/screenshot.png) 
+![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
 ## Contribution  
 Authored by:    
 Anthony Quinones  
