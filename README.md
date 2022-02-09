@@ -23,7 +23,7 @@ The site can be accessed at the following hyperlink:
 https://bhenry30.github.io/holly/  
 ## Screenshot:  
 ![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
-## Contribution  
+## Contributions  
 Authored by:    
 Anthony Quinones  
 Brandon Henry  
