@@ -12,7 +12,7 @@
         var dd = String(today.getDate()).padStart(2, '');
         var mm = String(today.getMonth() + 1).padStart(2, '');
         var yyyy = today.getFullYear(); } */
-
+      
         //for (var i = 0; i < CountryCodes.length; i++) {
         CountryCodes.forEach(function(element) { 
             async function fetchData() {

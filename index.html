@@ -11,12 +11,13 @@
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-      <link rel="stylesheet" href="./css/styles.css">
+      <link rel="stylesheet" href="./assets/css/styles.css">
 
       <style>
         .sticky-action { padding-bottom: 16px; margin-top: 2rem; margin-bottom: 2rem; }
         .flag { float: right; margin: -250px 0px 0px 0px; }
       </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body class="amber lighten-5">
@@ -39,7 +40,7 @@
         <!-- Datepicker and generate button -->
         <br>
         <div class="row">
-          <input type="text" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
+          <input type="text" id="datepicker" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
           <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" style="height: 3em;">
             Celebrate!
           </button>
@@ -49,18 +50,24 @@
         <div id="cardfetch"></div>
       </div>
         
-      <!--JavaScript at end of body for optimized loading-->
+      <!-- JavaScript at end of body for optimized loading-->
           <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
       <script type="text/javascript" src="assets/js/script.js"></script>
-      <!-- Initializers -->
+      
       <script>
           document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
           var instances = M.Datepicker.init(elems, {setDefaultDate: true, defaultDate: new Date()});
+          console.log(instances)
+          var instance = M.Datepicker.getInstance(elems);
+    
+          console.log(instance)
           });
+          // $.datepicker.parseDate( "mmm dd, yyyy", "Feb 8, 2022" )
+          //setDefaultDate: true, defaultDate: new Date()
       </script>
     </body>
   </html>
