@@ -14,11 +14,13 @@
     border-radius: 4px;
   }
 
-  .nav-wrapper .brand-logo img {
+  .teal {
+    max-height: 6vw
+  }
 
+  .teal img{
     display: block;
-    margin-top: 2vw;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50%;
+    max-height:inherit;
   }
