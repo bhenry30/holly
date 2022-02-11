@@ -51,10 +51,12 @@
         <!-- Datepicker and generate button -->
         <br>
         <div class="row">
-          <div class="input-field">
-          <input type="text" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
-          </div>
-          <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" style="height: 3em;">
+          <form>
+            <div class="input-field">
+              <input type="text" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
+            </div>
+          </form>
+          <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" id="search" onclick="search('date')" style="height: 3em;">
             Celebrate!
           </button>
         </div>
@@ -67,23 +69,32 @@
           <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <!-- <script type="text/javascript" src="assets/js/materialize.min.js"></script> -->
-      <script type="text/javascript" src="assets/js/script.js"></script>
-      
-      <script>
+ <script type="text/javascript" src="assets/js/script.js"></script>
+ <script type="text/javascript" src="assets/js/script_search.js"></script>
+ 
+  <script>
           document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
           var instances = M.Datepicker.init(elems, {
             setDefaultDate: true, 
             defaultDate: new Date(),
             // format: "mm-d-yyyy",
-            onSelect() {
-              var newDate = this.date.toDateString()
+            onSelect(){
+              // var newDate = this.date.getDate()
+              // var newMonth = this.date.getMonth()
+              // var newYear = this.date.getFullYear()
+              // console.log(newDate, newMonth, newYear)
+              var searchdd = String(this.date.getDate()).padStart(2, '');
+              var searchmm = String(this.date.getMonth() + 1).padStart(2, '');
+              var searchyyyy = this.date.getFullYear();
+              console.log(searchdd, searchmm, searchyyyy)
+              search();
+              // console.log(dd,mm,yyyy)
+              // getHoliday();
           }
      
           });
         });
-          // $.datepicker.parseDate( "mmm dd, yyyy", "Feb 8, 2022" )
-          //setDefaultDate: true, defaultDate: new Date()
       </script>
     </body>
   </html>
