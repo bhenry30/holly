@@ -72,12 +72,16 @@
       <script>
           document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
-          var instances = M.Datepicker.init(elems, {setDefaultDate: true, defaultDate: new Date()});
-          console.log(instances)
-          var instance = M.Datepicker.getInstance(elems);
-    
-          console.log(instance)
+          var instances = M.Datepicker.init(elems, {
+            setDefaultDate: true, 
+            defaultDate: new Date(),
+            // format: "mm-d-yyyy",
+            onSelect() {
+              var newDate = this.date.toDateString()
+          }
+     
           });
+        });
           // $.datepicker.parseDate( "mmm dd, yyyy", "Feb 8, 2022" )
           //setDefaultDate: true, defaultDate: new Date()
       </script>
