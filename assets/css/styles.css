@@ -13,3 +13,14 @@
   a {
     border-radius: 4px;
   }
+
+  .teal {
+    max-height: 6vw
+  }
+
+  .teal img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height:inherit;
+  }
