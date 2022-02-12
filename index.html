@@ -25,6 +25,8 @@
       <nav class="nav-extended" >
         <div class="teal darken-3" role="navigation" >
           <img class="responsive-img" id="logo" src="./assets/images/logo_holly.png" alt="brand-logo"/>
+          <img class="responsive-img" id="logo-symbol" src="./assets/images/logo_symbol.png" alt="brand-logo"/>
+          <a href="#" data-target="slide-out" class="sidenav-trigger" ><i class="large material-icons">bookmark</i></a>
           <div class="nav-wrapper container" >
             <!-- <a id="logo-container" href="#" class="brand-logo">
               <img class="responsive-img" id="logo" src="./assets/images/logo_holly.png" alt="brand-logo"/>
@@ -35,14 +37,26 @@
               <li class="tab disabled"><a href=""></a></li>
             </ul>
           </div>
-    
-          <!-- Navigation icons and href text
-          <a href="#" class="sidenav-trigger">
-            <input type="date" class="material-icons" class="datepicker">date_range</input>
-          </a> -->
         </div>
       </nav>
       
+      <!-- Sidenav element -->
+      <ul id="slide-out" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <nav class="nav-extended" >
+              <div class="teal darken-3" role="navigation" >
+                <li>Bookmarked Holidays<i class="medium material-icons">bookmark</i></li>
+              </div>
+            </nav>
+          </div>
+        </div></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+
       <br>
       
       <div class="container">
@@ -71,6 +85,12 @@
           document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
           var instances = M.Datepicker.init(elems, {setDefaultDate: true, defaultDate: new Date()});
+          });
+      </script>
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, {draggable:true, edge:"right"});
           });
       </script>
     </body>
