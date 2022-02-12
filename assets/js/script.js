@@ -108,7 +108,15 @@
                 <a id="bookmarkBtn" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to Bookmarks</a>
               </div>
             </div>`); }
-
+            $(document).ready(function() {
+              $("#bookmarkBtn").on("click", function(){
+                var nameEl = element.name
+                var dateEl = mm + '/' + dd + '/' + yyyy
+                // Save data to local storage 
+                localStorage.setItem(dateEl, nameEl);
+                console.log(dateEl)
+            })
+            });
             fetchPopData(); })}}
             fetchData(); })
     }
