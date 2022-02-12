@@ -1,6 +1,6 @@
 # HOLLY | EDUCATE & CELEBRATE  
 Interactive Front-End Project | Group 2  
-## Project Objective.  
+## Project Objective  
 We attempted to conceive and execute a design with our team that solves a real-world problem by integrating data received from multiple server-side API requests to create an interactive Holiday Database. We worked collaboratively, and learned agile development methodologies and implemented features, functions and bug fixes using the Git branch workflow and pull requests.   
 ## Description  
 Holly is a web app that allows users to educate themselves about holidays and events that happen around the world every day and other interesting facts.  
