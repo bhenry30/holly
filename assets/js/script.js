@@ -90,7 +90,7 @@
             card.insertAdjacentHTML('beforeend', `
             <div class="card sticky-action">
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><h4>${element.name}</h4></span>
+                <span class="card-title activator grey-text text-darken-4"><h4 class="teal-text text-darken-3">${element.name}</h4></span>
                 <h5>Celebrated In: ${element.country.name}<br>
               ${element.type} on ${holidayMonth} ${holidayDay}</h5>
               <p>${element.description}</p><br>

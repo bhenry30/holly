@@ -84,7 +84,8 @@
 
   .flag { 
     float: right; margin: -260px 20px 0px 0px; 
-    filter: drop-shadow(0 0 0.3rem rgb(131, 131, 131)); 
+    filter: drop-shadow(0 0 0.3rem rgb(131, 131, 131));
+    max-width: 15%; 
   }
 
   .card { 
@@ -92,17 +93,15 @@
     padding-left: 20px; 
   }
 
-
-
   h4 { 
     margin-top: 10px; 
-    font-weight: 500;
-    max-width: 50vw;
+    font-weight: 700;
+    max-width: 70%;
   }
   
   p { 
     font-size: 1.15rem;
-    max-width: 45vw;
+    max-width: 70%;
     
   }
 
