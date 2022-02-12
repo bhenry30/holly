@@ -17,13 +17,13 @@
         var dd = String(today.getDate()).padStart(2, '');
         var mm = String(today.getMonth() + 1).padStart(2, '');
         var yyyy = today.getFullYear(); } */
-
+    function getHoliday(){
         //for (var i = 0; i < CountryCodes.length; i++) {
         CountryCodes.forEach(function(element) { 
             async function fetchData() {
             const countryCode = `${element.toLowerCase()}`;
             
-            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${countryCode}&day=2&month=${mm}&year=${yyyy}/json`)
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${countryCode}&day=${dd}&month=${mm}&year=${yyyy}/json`)
             const holidays = await response.json();
             const JSONstr = JSON.stringify(holidays);
 
@@ -110,3 +110,5 @@
 
             fetchPopData(); })}}
             fetchData(); })
+    }
+    getHoliday();
