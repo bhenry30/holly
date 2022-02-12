@@ -53,12 +53,12 @@
         <div class="row">
           <form>
             <div class="input-field">
-              <input type="text" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
+              <input type="text" placeholder="Click here to select a new date" class="col s8 offset-s2 datepicker">
             </div>
           </form>
-          <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" id="search" onclick="search('date')" style="height: 3em;">
+          <!-- <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" id="search" onclick="search('date')" style="height: 3em;">
             Celebrate!
-          </button>
+          </button> -->
         </div>
         <br>
         <!-- Card -->
@@ -76,21 +76,15 @@
           document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
           var instances = M.Datepicker.init(elems, {
-            setDefaultDate: true, 
-            defaultDate: new Date(),
-            // format: "mm-d-yyyy",
+            // setDefaultDate: true, 
+            // defaultDate: new Date(),
             onSelect(){
-              // var newDate = this.date.getDate()
-              // var newMonth = this.date.getMonth()
-              // var newYear = this.date.getFullYear()
-              // console.log(newDate, newMonth, newYear)
-              var searchdd = String(this.date.getDate()).padStart(2, '');
-              var searchmm = String(this.date.getMonth() + 1).padStart(2, '');
-              var searchyyyy = this.date.getFullYear();
-              console.log(searchdd, searchmm, searchyyyy)
-              search();
-              // console.log(dd,mm,yyyy)
-              // getHoliday();
+              dd = String(this.date.getDate()).padStart(2, '');
+              mm = String(this.date.getMonth() + 1).padStart(2, '');
+              yyyy = this.date.getFullYear();
+              console.log(dd, mm, yyyy)
+              $("#cardfetch").empty()
+              getHoliday();
           }
      
           });
