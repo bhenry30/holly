@@ -30,11 +30,12 @@
   }
 
   .teal #logo-symbol {
-    position:absolute;
+    position:fixed;
+    margin-left: 47vw;
   }
 
   nav a.sidenav-trigger i {
-    position: absolute;
+    position: fixed;
     left: 90vw;
     font-size: 350%;
     margin-top: 1vw;
