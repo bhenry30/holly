@@ -1,24 +1,21 @@
-//Country codes for loop
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems, {
+    setDefaultDate: true, 
+    defaultDate: new Date(),
+    // format: "mm-d-yyyy",
+    onSelect(){
 
-        //Top 100 largest Countries
-        //var CountryCodes = [ "CN", "IN", "US", "ID", "PK", "BR", "NG", "BD", "RU", "MX", "JP", "ET", "PH", "EG", "VN", "TR", "IR", "DE", "TH", "GB", "FR", "IT", "TZ", "ZA", "MM", "KE", "KR", "CO", "ES" ];
-        //Full List All Countries
-        var CountryCodes = [ "AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BQ", "BA", "BW", "BV", "BR", "IO", "BN", "BG", "BF", "BI", "CV", "KH", "CM", "CA", "KY", "CF", "TD", "CL", "CN", "CX", "CC", "CO", "KM", "CK", "CR", "CI", "HR", "CU", "CW", "CY", "CZ", "DK", "DJ", "DM", "DO", "EC", "EG", "SV", "GQ", "ER", "EE", "SZ", "ET", "FK", "FO", "FJ", "FI", "FR", "GF", "PF", "TF", "GA", "GM", "DE", "GE", "GH", "GI", "GR", "GL", "GD", "GP", "GU", "GT", "GG", "GN", "GW", "GY", "HT", "HM", "VA", "HN", "HK", "HU", "IS", "IN", "ID", "IR", "IQ", "IE", "IM", "IL", "IT", "JM", "JP", "JE", "JO", "KZ", "KE", "KI", "KP", "KR", "KW", "KG", "LA", "LV", "LB", "LS", "LR", "LY", "LI", "LT", "LU", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MQ", "MR", "MU", "YT", "MX", "FM", "MD", "MC", "MN", "ME", "MS", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "NC", "NZ", "NI", "NE", "NG", "NU", "NF", "MK", "MP", "NO", "OM", "PK", "PW", "PS", "PA", "PG", "PY", "PE", "PH", "PN", "PL", "PT", "PR", "QA", "RE", "RO", "RU", "RW", "BL", "SH", "KN", "LC", "MF", "PM", "VC", "WS", "SM", "ST", "SA", "SN", "RS", "SC", "SL", "SG", "SX", "SK", "SI", "SB", "SO", "ZA", "GS", "SS", "ES", "LK", "SD", "SR", "SJ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW" ];
-        //Top 30 Random Countries
-        //var CountryCodes = [ "CN", "IN", "US", "ID", "PK", "BR", "NG", "BD", "RU", "MX", "JP", "ET", "PH", "EG", "VN", "TR", "IR", "DE", "TH", "GB", "FR", "IT", "TZ", "ZA", "MM", "KE", "KR", "CO", "ES" ];
+      var CountryCodes = [ "AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BQ", "BA", "BW", "BV", "BR", "IO", "BN", "BG", "BF", "BI", "CV", "KH", "CM", "CA", "KY", "CF", "TD", "CL", "CN", "CX", "CC", "CO", "KM", "CK", "CR", "CI", "HR", "CU", "CW", "CY", "CZ", "DK", "DJ", "DM", "DO", "EC", "EG", "SV", "GQ", "ER", "EE", "SZ", "ET", "FK", "FO", "FJ", "FI", "FR", "GF", "PF", "TF", "GA", "GM", "DE", "GE", "GH", "GI", "GR", "GL", "GD", "GP", "GU", "GT", "GG", "GN", "GW", "GY", "HT", "HM", "VA", "HN", "HK", "HU", "IS", "IN", "ID", "IR", "IQ", "IE", "IM", "IL", "IT", "JM", "JP", "JE", "JO", "KZ", "KE", "KI", "KP", "KR", "KW", "KG", "LA", "LV", "LB", "LS", "LR", "LY", "LI", "LT", "LU", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MQ", "MR", "MU", "YT", "MX", "FM", "MD", "MC", "MN", "ME", "MS", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "NC", "NZ", "NI", "NE", "NG", "NU", "NF", "MK", "MP", "NO", "OM", "PK", "PW", "PS", "PA", "PG", "PY", "PE", "PH", "PN", "PL", "PT", "PR", "QA", "RE", "RO", "RU", "RW", "BL", "SH", "KN", "LC", "MF", "PM", "VC", "WS", "SM", "ST", "SA", "SN", "RS", "SC", "SL", "SG", "SX", "SK", "SI", "SB", "SO", "ZA", "GS", "SS", "ES", "LK", "SD", "SR", "SJ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW" ];
 
-        //Fetches the CALENDARIFIC API
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '');
-        var mm = String(today.getMonth() + 1).padStart(2, '');
-        var yyyy = today.getFullYear();
-
-        /*if( datepicker ) {
-        var dd = String(today.getDate()).padStart(2, '');
-        var mm = String(today.getMonth() + 1).padStart(2, '');
-        var yyyy = today.getFullYear(); } */
-    function getHoliday() {
-        //for (var i = 0; i < CountryCodes.length; i++) {
+      var dd = this.date.getDate();
+      var mm = (this.date.getMonth() + 1);
+      var yyyy = this.date.getFullYear();
+      var clearCard = 0;
+      
+      console.log(`${mm}-${dd}-${yyyy}`);
+      
+      function getHoliday(){
         CountryCodes.forEach(function(element) { 
             async function fetchData() {
             const countryCode = `${element.toLowerCase()}`;
@@ -87,6 +84,8 @@
                 if (element.date.datetime.month == 12) { var holidayMonth = "December"; }
     
             //Starts the record handoff to HTML
+            if( clearCard == 0) { document.getElementById("cardfetch").innerHTML = ""; }
+            document.getElementById("selectedDate").innerHTML = `${mm}-${dd}-${yyyy}`;
             card.insertAdjacentHTML('beforeend', `
             <div class="card sticky-action">
               <div class="card-content">
@@ -106,9 +105,18 @@
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
                 <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
               </div>
-            </div>`); }
+            </div>`);
+            clearCard = clearCard + 1; }
 
             fetchPopData(); })}}
+
             fetchData(); })
     }
     getHoliday();
+
+    }
+    
+
+  });
+
+});
