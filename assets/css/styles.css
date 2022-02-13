@@ -15,7 +15,8 @@
   }
 
   .teal {
-    max-height: 8vw
+    max-height: 8vw;
+    height: 8vw;
   }
 
   .teal li {
@@ -52,7 +53,7 @@
       display:none;
     }
   }
-
+  
   #slide-out.sidenav {
     background-color: #fff8e1;
   }
