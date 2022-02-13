@@ -118,15 +118,15 @@ function getHoliday() {
                 <a id="bookmarkBtn-${holidayIdentifier}"" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
                 </div>
                 </div> `); 
+                $(document).find("a[id^='bookmarkBtn-']").on('click', function(){
+                    var localHolidayIdentifier = this.id.split('-')[1];
+                    var nameEl = $(".card-title-" + localHolidayIdentifier).text();
+                    var dateEl = mm + '/' + dd + '/' + yyyy;
+                    localStorage.setItem(nameEl, dateEl);
+                });
               }
     
     
-              $(document).find("a[id^='bookmarkBtn-']").on('click', function(){
-                  var localHolidayIdentifier = this.id.split('-')[1];
-                  var nameEl = $(".card-title-" + localHolidayIdentifier).text();
-                  var dateEl = mm + '/' + dd + '/' + yyyy;
-                  localStorage.setItem(nameEl, dateEl);
-              });
   
               fetchPopData(); 
             }})}}
