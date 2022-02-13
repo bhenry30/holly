@@ -7,6 +7,11 @@
         //Top 30 Random Countries
         //var CountryCodes = [ "CN", "IN", "US", "ID", "PK", "BR", "NG", "BD", "RU", "MX", "JP", "ET", "PH", "EG", "VN", "TR", "IR", "DE", "TH", "GB", "FR", "IT", "TZ", "ZA", "MM", "KE", "KR", "CO", "ES" ];
 
+        // const holidayNameEl = document.getElementById("#holiday-name")
+        // const bookmarkBtnEl = document.getElementById("#bookmarkBtn")
+        
+
+
         //Fetches the CALENDARIFIC API
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '');
@@ -86,30 +91,54 @@
                 if (element.date.datetime.month == 11) { var holidayMonth = "November"; }
                 if (element.date.datetime.month == 12) { var holidayMonth = "December"; }
     
-            //Starts the record handoff to HTML
-            card.insertAdjacentHTML('beforeend', `
-            <div class="card sticky-action">
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><h4 class="teal-text text-darken-3">${element.name}</h4></span>
+                
+                //Starts the record handoff to HTML
+                card.insertAdjacentHTML('beforeend', `
+                <div class="card sticky-action">
+                <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><h4 id= "holiday-name" class="teal-text element-name text-darken-3">${element.name}</h4></span>
                 <h5>Celebrated In: ${element.country.name}<br>
-              ${element.type} on ${holidayMonth} ${holidayDay}</h5>
-              <p>${element.description}</p><br>
-              <p>${element.country.name} has a population of ${CountryPopulation}<br>World Ranking by population is ${obj.ranking}<br>${element.country.name} is ${WorldShare}% of the World Population and celebrates this holiday</p>
-              <sub style="color: gray; " >Source: Worldometer (www.Worldometers.info)</sub>
-              <div id="holiday">
-              <img style="clear: right" class="flag" src="https://flagcdn.com/w640/us.png" srcset="https://flagcdn.com/w1280/${countryCode}.png"
+                ${element.type} on ${holidayMonth} ${holidayDay}</h5>
+                <p>${element.description}</p><br>
+                <p>${element.country.name} has a population of ${CountryPopulation}<br>World Ranking by population is ${obj.ranking}<br>${element.country.name} is ${WorldShare}% of the World Population and celebrates this holiday</p>
+                <sub style="color: gray; " >Source: Worldometer (www.Worldometers.info)</sub>
+                <div id="holiday">
+                <img style="clear: right" class="flag" src="https://flagcdn.com/w640/us.png" srcset="https://flagcdn.com/w1280/${countryCode}.png"
                 width="200"
                 alt="${element.country.name}"></div>
-              </div>
-
-              <div class="card-action">
+                </div>
+                
+                <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
                 <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Export to My Calendar</a>
-                <a id="bookmarkBtn" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to Bookmarks</a>
-              </div>
-            </div>`); }
+                <a id="bookmarkBtn" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;" href="#">Bookmark this holiday</a>
+                </div>
+                </div> `); }
+                
+                
+                $(document).ready(function() {
+                  $("#bookmarkBtn").on("click", function(){
+                    var nameEl = $(".card-title").text();
+                    var dateEl = mm + '/' + dd + '/' + yyyy;
+                    // Save data to local storage 
+                    localStorage.setItem(nameEl, dateEl);
+                    console.log(dateEl, nameEl)
+                })
+              });
 
-            fetchPopData(); })}}
-            fetchData(); })
-    }
-    getHoliday();
+              // window.onload = function(){
+              //   bookmarkBtnEl.onclick = function () {
+              //     const nameEl = holidayNameEl.text();
+              //     const dateEl = mm + '/' + dd + '/' + yyyy;
+              //     localStorage.setItem(dateEl, nameEl);
+              //       console.log(dateEl, nameEl)
+              //   };
+              // }
+              
+              fetchPopData(); })}}
+              fetchData(); })
+            }
+            getHoliday();
+            
+
+        
