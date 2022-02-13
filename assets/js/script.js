@@ -41,7 +41,7 @@ function getHoliday() {
 
             var isObservance = false;
             element.type.forEach(function(obs) {
-              console.log("Observance " + obs.toLowerCase().includes('observance'));
+              // console.log("Observance " + obs.toLowerCase().includes('observance'));
               if (obs.toLowerCase().includes('observance')) {
                 isObservance = true;
               }
