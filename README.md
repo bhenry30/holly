@@ -27,8 +27,7 @@ https://bhenry30.github.io/holly/
 ## Contributions  
 =======
 https://hmarkestrad.github.io/bhenry30/holly/  
-## Screenshot:  
-![Holly](https://github.com/bhenry30/holly/tree/main/assets/imges/screenshot.png) 
+
 ## Contribution  
 Authored by:    
 Anthony Quinones  
