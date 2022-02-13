@@ -28,9 +28,8 @@ https://bhenry30.github.io/holly/
 =======
 https://hmarkestrad.github.io/bhenry30/holly/  
 ## Screenshot:  
-![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/tree/main/assets/imges/screenshot.png) 
+![Holly](https://github.com/bhenry30/holly/tree/main/assets/imges/screenshot.png) 
 ## Contribution  
->>>>>>> 25a206681b3f0c4be7f0543b225d12a4052d5f91
 Authored by:    
 Anthony Quinones  
 Brandon Henry  
