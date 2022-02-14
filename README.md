@@ -23,9 +23,6 @@ The site can be accessed at the following hyperlink:
 https://bhenry30.github.io/holly/  
 ## Screenshot:  
 ![HOLLY | EDUCATE & CELEBRATE](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
-## Contributions
-https://hmarkestrad.github.io/bhenry30/holly/  
-
 ## Contribution  
 Authored by:    
 Anthony Quinones  
