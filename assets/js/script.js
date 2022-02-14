@@ -12,7 +12,7 @@ var today = new Date();
       var dd = String(today.getDate()).padStart(2, '');
   var mm = String(today.getMonth() + 1).padStart(2, '');
   var yyyy = today.getFullYear();
-
+//hamb. is messing with the bookmark
   function setbookmarks() {
     for (var i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
