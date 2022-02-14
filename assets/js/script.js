@@ -122,14 +122,14 @@ function getHoliday() {
                   function download_ics_file() {
                   //define the heading for each row of the data 
                   var ics = '';
-                  //merge the data with CSV 
+                  //merge the data with .ics
                   exportHolidayData.forEach(function(row) {
                   ics += row.join('');
                   ics += "\n"; });
                   //display the created ics data on the web browser 
                   //document.write(ics);
-                  var hiddenElement = document.createElement('a'); hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(ics); hiddenElement.target = '_blank';
-                  //provide the name for the CSV file to be downloaded 
+                  var hiddenElement = document.createElement('a'); hiddenElement.href = 'data:text/calendar;charset=utf-8,' + encodeURI(ics); hiddenElement.target = '_blank';
+                  //provide the name for the ICS file to be downloaded 
                   download = `${element.name}.ics`;
                   var href = hiddenElement.href;
                   var downLoadName = hiddenElement.target;
