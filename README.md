@@ -20,14 +20,9 @@ This site was developed using the following technologies:
 * Add a loading icon to indicate to users that there is content loading, then display all results at once  
 ## Website  
 The site can be accessed at the following hyperlink:  
-<<<<<<< HEAD
 https://bhenry30.github.io/holly/  
 ## Screenshot:  
-![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
-## Contributions  
-=======
-https://hmarkestrad.github.io/bhenry30/holly/  
-
+![HOLLY | EDUCATE & CELEBRATE ](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
 ## Contribution  
 Authored by:    
 Anthony Quinones  
