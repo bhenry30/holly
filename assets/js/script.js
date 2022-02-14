@@ -152,7 +152,7 @@ function getHoliday() {
                 </div>
                 <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
-                <a class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem" ${linkdata}>Export Holiday to Calendar</a>
+                <a class="teal white-text col s2 hoverable" style="padding: .8rem" ${linkdata}>Export Holiday to Calendar</a>
                 <a id="bookmarkBtn-${holidayIdentifier}" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
                 </div>
                 </div> `); 
