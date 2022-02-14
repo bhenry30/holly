@@ -124,7 +124,7 @@ function getHoliday() {
                 <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
                 <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Export to My Calendar</a>
-                <a id="bookmarkBtn-${holidayIdentifier}" class="red sidenav-trigger accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
+                <a id="bookmarkBtn-${holidayIdentifier}" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
                 </div>
                 </div> `); 
                 $(document).find("a[id^='bookmarkBtn-']").on('click', function(){
