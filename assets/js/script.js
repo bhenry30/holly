@@ -13,7 +13,16 @@ var today = new Date();
   var mm = String(today.getMonth() + 1).padStart(2, '');
   var yyyy = today.getFullYear();
 
-
+  function setbookmarks() {
+    for (var i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key)
+      console.log(key, value)
+      $("#bookmarks").append(`<h6>${key}: ${value}</h6>`)
+    
+    }
+  }
+setbookmarks();
 function getHoliday() {
   //for (var i = 0; i < CountryCodes.length; i++) {
   CountryCodes.forEach(function(element) { 
@@ -115,7 +124,7 @@ function getHoliday() {
                 <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
                 <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Export to My Calendar</a>
-                <a id="bookmarkBtn-${holidayIdentifier}"" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
+                <a id="bookmarkBtn-${holidayIdentifier}" class="red sidenav-trigger accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
                 </div>
                 </div> `); 
                 $(document).find("a[id^='bookmarkBtn-']").on('click', function(){
