@@ -17,7 +17,7 @@
         var dd = String(today.getDate()).padStart(2, '');
         var mm = String(today.getMonth() + 1).padStart(2, '');
         var yyyy = today.getFullYear(); } */
-    function getHoliday() {
+        function getHoliday() {
         //for (var i = 0; i < CountryCodes.length; i++) {
         CountryCodes.forEach(function(element) { 
             async function fetchData() {
@@ -85,7 +85,52 @@
                 if (element.date.datetime.month == 10) { var holidayMonth = "October"; }
                 if (element.date.datetime.month == 11) { var holidayMonth = "November"; }
                 if (element.date.datetime.month == 12) { var holidayMonth = "December"; }
-    
+
+var exportHolidayData = [
+['BEGIN:', 'VCALENDAR'],
+['VERSION:', '2.0'],
+['PRODID:', '-//Apple Inc.//macOS 12.1//EN'],
+['CALSCALE:', 'GREGORIAN'],
+['BEGIN:', 'VEVENT'],
+['TRANSP:', 'TRANSPARENT'],
+['DTEND;VALUE=DATE:', `${yyyy}${mm}${dd}T235959`],
+['X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:', 'AUTOMATIC'],
+['LOCATION:', `${element.country.name}`],
+['DESCRIPTION:', `${element.description}`],
+['URL;VALUE=URI:', `https://en.wikipedia.org/wiki/${element.name}/`],
+['SEQUENCE:', '1'],
+['SUMMARY:', `${element.name}`],
+['DTSTART;VALUE=DATE:', '20220213'],
+['RRULE:FREQ=YEARLY;', 'INTERVAL=1'],
+['END:', 'VEVENT'],
+['END:', 'VCALENDAR']
+];
+
+function download_ics_file() {
+//define the heading for each row of the data  
+var ics = '';  
+  
+//merge the data with CSV  
+exportHolidayData.forEach(function(row) {  
+        ics += row.join('');  
+        ics += "\n";  
+}); 
+
+//display the created ics data on the web browser   
+//document.write(ics);
+
+var hiddenElement = document.createElement('a');  
+hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(ics);
+hiddenElement.target = '_blank';  
+
+//provide the name for the CSV file to be downloaded  
+download = `${element.name}.ics`;  
+
+var href = hiddenElement.href;
+var downLoadName = hiddenElement.target;
+var linkdata = `href="${href}" download="${download}" target="_blank"`;
+console.log(linkdata);
+              
             //Starts the record handoff to HTML
             card.insertAdjacentHTML('beforeend', `
             <div class="card sticky-action">
@@ -104,11 +149,15 @@
 
               <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
-                <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
+
+<a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" ${linkdata}>Export Holiday to Calendar</a>
+
               </div>
             </div>`); }
-
+            
+download_ics_file(); }
             fetchPopData(); })}}
+            
             fetchData(); })
-    }
+            }
     getHoliday();
