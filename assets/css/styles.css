@@ -55,6 +55,13 @@ nav a.sidenav-trigger i {
   }
 }
 
+@media only screen and (min-width: 993px) {
+  nav a.sidenav-trigger {
+      display: inline-block;
+      margin-top: 1vw;
+  }
+}
+
 #slide-out.sidenav {
   background-color: #fff8e1;
 }
