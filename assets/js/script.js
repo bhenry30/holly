@@ -12,15 +12,15 @@ var today = new Date();
       var dd = String(today.getDate()).padStart(2, '');
   var mm = String(today.getMonth() + 1).padStart(2, '');
   var yyyy = today.getFullYear();
-
+//Book mark functions, still need to figure out the full screen display
   function setbookmarks() {
     for (var i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       const value = localStorage.getItem(key)
       console.log(key, value)
       $("#bookmarks").append(`<h6>${key}: ${value}</h6>`)
-    
     }
+        
   }
 setbookmarks();
 function getHoliday() {
