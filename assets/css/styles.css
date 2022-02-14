@@ -106,6 +106,10 @@
     
   }
 
+  .nav-links {
+    max-height: 50% ;
+  }
+
     .sticky-action { padding-bottom: 16px; margin-top: 2rem; margin-bottom: 2rem; }
         .flag { float: right; margin: -260px 20px 0px 0px; filter: drop-shadow(0 0 0.3rem rgb(131, 131, 131)); }
         .card { border-radius: 20px; padding-left: 20px; }

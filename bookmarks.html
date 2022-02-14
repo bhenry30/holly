@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+        <link rel="stylesheet" href="./assets/css/styles.css">
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      </head>
+</head>
+<body class="amber lighten-5">
+<!-- Navigation bar container -->
+    <nav class="nav-extended" >
+        <div class="teal darken-3" role="navigation" >
+          <img class="responsive-img" id="logo" src="./assets/images/logo_holly.png" alt="brand-logo"/>
+          <img class="responsive-img" id="logo-symbol" src="./assets/images/logo_symbol.png" alt="brand-logo"/>
+          <ul class="right nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./bookmarks.html">Bookmarks</a></li>
+          </ul>
+          <div class="nav-wrapper container" >
+          </div>
+          <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+              <li class="tab disabled"><a href=""></a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <span id="bookmarks"></span>
+</div>    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    for (var i = 0; i < localStorage.length; i++) {
+                  const key = localStorage.key(i);
+                  const value = localStorage.getItem(key)
+                  console.log(key, value)
+                  $("#bookmarks").append(`<h4> ${key}: ${value} </h4>`);
+                  }
+</script>
+</body>
+</html>
