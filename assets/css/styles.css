@@ -31,8 +31,9 @@ a {
 }
 
 .teal #logo-symbol {
-  position:fixed;
+  position: block;
   margin-left: 47vw;
+  max-height: 6vw;
 }
 
 nav a.sidenav-trigger i {
