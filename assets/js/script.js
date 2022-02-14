@@ -141,6 +141,7 @@ function getHoliday() {
     fetchData(); 
   })
 }
-getHoliday();       
+getHoliday();
+            
 
         
