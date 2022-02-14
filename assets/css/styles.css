@@ -40,7 +40,7 @@ a {
 }
 
 .teal {
-  max-height: 9vw
+  max-height: 7vw
 }
 
 .teal li {
@@ -51,7 +51,7 @@ a {
   display: inline-block;
   margin-left: 6vw;
   margin-top: 1.75vw;
-  max-height:6vw;
+  max-height:4vw;
 }
 
 .teal #logo-symbol {
