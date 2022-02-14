@@ -39,7 +39,7 @@ nav a.sidenav-trigger i {
   position: fixed;
   left: 90vw;
   font-size: 350%;
-  margin-top: 1vw;
+  margin-top: 2vw;
 }
 
 @media screen and (min-width: 1300px) {
