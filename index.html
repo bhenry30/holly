@@ -5,102 +5,91 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
-
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-      <link rel="stylesheet" href="./css/styles.css">
+      <link rel="stylesheet" href="./assets/css/styles.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body class="amber lighten-5">
       
       <!-- Navigation bar container -->
-      <nav class="teal darken-3" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Holly</a>
-    
-          <!-- Navigation icons and href text -->
-          <!-- <a href="#" class="sidenav-trigger">
-            <input type="date" class="material-icons" class="datepicker">date_range</input>
-          </a> -->
-        </div>
-      </nav>
+      <div class="navbar-fixed">
+        <nav class="nav-extended" >
+          <div class="teal darken-3" role="navigation" >
+            <img class="responsive-img" id="logo" src="./assets/images/logo_holly.png" alt="brand-logo"/>
+            <img class="responsive-img" id="logo-symbol" src="./assets/images/logo_symbol.png" alt="brand-logo"/>
+            <a href="#" data-target="slide-out" class="sidenav-trigger" ><i class="large material-icons" id="big-bookmark">bookmark</i></a>
+            <div class="nav-wrapper container" >
+              <!-- <a id="logo-container" href="#" class="brand-logo">
+                <img class="responsive-img" id="logo" src="./assets/images/logo_holly.png" alt="brand-logo"/>
+              </a> -->
+            </div>
+          </div>
+        </nav>
+      </div>
       
-      <br>
+      <!-- Sidenav element -->
+      <ul id="slide-out" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <nav class="nav-extended" >
+              <div class="teal darken-3" role="navigation" >
+                <li>Bookmarked Holidays<i class="medium material-icons">bookmark</i></li>
+              </div>
+            </nav>
+          </div>
+        </div></li>
+        <li id="bookmarks"></li>
+      </ul>
+
+      <br><br><br><br>
       
       <div class="container">
 
         <!-- Datepicker and generate button -->
         <br>
         <div class="row">
-          <input type="text" placeholder="Click to select date" class="col s7 offset-s1 datepicker">
-          <button class="btn flow-text red accent-2 col s2 offset-s1 hoverable" style="height: 3em;">
-            Celebrate!
-          </button>
+          <form>
+            <div class="input-field">
+              <input type="text" id="datepicker" placeholder="Click here to select a new date" class="col s8 offset-s2 datepicker">
+            </div>
+          </form>
         </div>
         <br>
         <!-- Card -->
-        <div class="card sticky-action">
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, pariatur sequi! Numquam eligendi ipsam illo debitis amet eos tenetur, similique quaerat facere vel. Distinctio molestiae possimus corrupti eius suscipit. Perspiciatis.</p>
-          </div>
-          <div class="card-action">
-            <a id="learnMore" class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="#">Learn More</a>
-            <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-
-        <!-- Card -->
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, pariatur sequi! Numquam eligendi ipsam illo debitis amet eos tenetur, similique quaerat facere vel. Distinctio molestiae possimus corrupti eius suscipit. Perspiciatis.</p>
-          </div>
-          <div class="card-action">
-            <a id="learnMore" class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="#">Learn More</a>
-            <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-
-        <!-- Card -->
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, pariatur sequi! Numquam eligendi ipsam illo debitis amet eos tenetur, similique quaerat facere vel. Distinctio molestiae possimus corrupti eius suscipit. Perspiciatis.</p>
-          </div>
-          <div class="card-action">
-            <a id="learnMore" class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="#">Learn More</a>
-            <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Save to My Calendar</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
-        
+        <div id="cardfetch"></div>
       </div>
         
-      <!--JavaScript at end of body for optimized loading-->
+      <!-- JavaScript at end of body for optimized loading-->
           <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-      <!-- Initializers -->
+      
       <script>
-          document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.datepicker');
-          var instances = M.Datepicker.init(elems, {});
+          var instances = M.Datepicker.init(elems, {
+            // setDefaultDate: true, 
+            // defaultDate: new Date(),
+            onClose(){
+              dd = String(this.date.getDate()).padStart(2, '');
+              mm = String(this.date.getMonth() + 1).padStart(2, '');
+              yyyy = this.date.getFullYear();
+              console.log(dd, mm, yyyy)
+              $("#cardfetch").empty()
+              getHoliday();
+            }
           });
-      </script>
+        });
+        </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, {draggable:true, edge:"right"});
+        });
+        </script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
     </body>
   </html>

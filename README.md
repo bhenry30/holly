@@ -1,6 +1,6 @@
 # HOLLY | EDUCATE & CELEBRATE  
 Interactive Front-End Project | Group 2  
-## Project Objective.  
+## Project Objective  
 We attempted to conceive and execute a design with our team that solves a real-world problem by integrating data received from multiple server-side API requests to create an interactive Holiday Database. We worked collaboratively, and learned agile development methodologies and implemented features, functions and bug fixes using the Git branch workflow and pull requests.   
 ## Description  
 Holly is a web app that allows users to educate themselves about holidays and events that happen around the world every day and other interesting facts.  
@@ -20,9 +20,14 @@ This site was developed using the following technologies:
 * Add a loading icon to indicate to users that there is content loading, then display all results at once  
 ## Website  
 The site can be accessed at the following hyperlink:  
-https://hmarkestrad.github.io/bhenry30/holly/  
+<<<<<<< HEAD
+https://bhenry30.github.io/holly/  
 ## Screenshot:  
-![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/tree/main/assets/imges/screenshot.png) 
+![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/bhenry30/holly/blob/d4f3151da9e6e5e2641389ac7a2e858bdc51f80e/assets/images/screenshot.png) 
+## Contributions  
+=======
+https://hmarkestrad.github.io/bhenry30/holly/  
+
 ## Contribution  
 Authored by:    
 Anthony Quinones  
