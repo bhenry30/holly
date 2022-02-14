@@ -13,24 +13,19 @@ var today = new Date();
   var mm = String(today.getMonth() + 1).padStart(2, '');
   var yyyy = today.getFullYear();
 
-  function setbookmarks() {
-    for (var i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key)
-      console.log(key, value)
-      $("#bookmarks").append(`<h6>${key}: ${value}</h6>`)
-    
-    }
-  }
-setbookmarks();
-function getHoliday() {
-  //for (var i = 0; i < CountryCodes.length; i++) {
-  CountryCodes.forEach(function(element) { 
-    async function fetchData() {
-      const countryCode = `${element.toLowerCase()}`;  
-      const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${countryCode}&day=${dd}&month=${mm}&year=${yyyy}/json`)
-      const holidays = await response.json();
-      const JSONstr = JSON.stringify(holidays);
+        /*if( datepicker ) {
+        var dd = String(today.getDate()).padStart(2, '');
+        var mm = String(today.getMonth() + 1).padStart(2, '');
+        var yyyy = today.getFullYear(); } */
+        function getHoliday() {
+        //for (var i = 0; i < CountryCodes.length; i++) {
+        CountryCodes.forEach(function(element) { 
+            async function fetchData() {
+            const countryCode = `${element.toLowerCase()}`;
+            
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=9482cbc8381d91c591e0818d55fcc0aa976b1b75&country=${countryCode}&day=${dd}&month=${mm}&year=${yyyy}/json`)
+            const holidays = await response.json();
+            const JSONstr = JSON.stringify(holidays);
 
         if( JSONstr != `{"meta":{"code":200},"response":{"holidays":[]}}` ) { 
 
@@ -104,12 +99,11 @@ function getHoliday() {
                 if (element.date.datetime.month == 11) { var holidayMonth = "November"; }
                 if (element.date.datetime.month == 12) { var holidayMonth = "December"; }
               
-
-                //Starts the record handoff to HTML
-                card.insertAdjacentHTML('beforeend', `
-                <div class="card sticky-action">
-                <div class="card-content">
-                <span class="card-title-${holidayIdentifier} activator grey-text text-darken-4"><h4 id= "holiday-name" class="teal-text element-name text-darken-3">${element.name}</h4></span>
+            //Starts the record handoff to HTML
+            card.insertAdjacentHTML('beforeend', `
+            <div class="card sticky-action">
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><h4>${element.name}</h4></span>
                 <h5>Celebrated In: ${element.country.name}<br>
                 ${element.type} on ${holidayMonth} ${holidayDay}</h5>
                 <p>${element.description}</p><br>
@@ -123,26 +117,15 @@ function getHoliday() {
 
                 <div class="card-action">
                 <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem" href="https://en.wikipedia.org/wiki/${element.name}" target="_blank">Learn More</a>
-                <a id="saveBtn" class="teal darken-3 white-text col s2 hoverable" style="padding: .8rem;" href="#">Export to My Calendar</a>
-                <a id="bookmarkBtn-${holidayIdentifier}" class="red accent-2 white-text col s2 hoverable" style="padding: .8rem;">Bookmark this holiday</a>
-                </div>
-                </div> `); 
-                $(document).find("a[id^='bookmarkBtn-']").on('click', function(){
-                    var localHolidayIdentifier = this.id.split('-')[1];
-                    var nameEl = $(".card-title-" + localHolidayIdentifier).text();
-                    var dateEl = mm + '/' + dd + '/' + yyyy;
-                    localStorage.setItem(nameEl, dateEl);
-                });
-              }
-    
-    
-  
-              fetchPopData(); 
-            }})}}
-    fetchData(); 
-  })
-}
-getHoliday();
-            
 
-        
+                <a class="orange lighten-3 white-text col s2 hoverable" style="padding: .8rem">Export Holiday to Calendar</a>
+
+              </div>
+            </div>`); }
+            
+              
+            fetchPopData(); })}}
+            
+            fetchData(); })
+            }
+    getHoliday();
